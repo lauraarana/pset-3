@@ -8,6 +8,10 @@
 ## Limpiar el entorno
 rm(list=ls())
 
+dir.create("C:/Users/lauraarana/Desktop/pset-3/output")
+
+##########          Punto 1          ##########
+
 require(pacman)
 p_load(tidyverse, rio, 
        arrow, ## read parque files
@@ -21,8 +25,6 @@ p_load(tidyverse, rio,
        stargazer, # export tables to latex 
        coefplot
 )
-
-##########          Punto 1          ##########
 
 #1.1
 regresiones <- import ("input/data_regresiones.rds") 
