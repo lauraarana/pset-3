@@ -1,0 +1,32 @@
+## Problem set 3 Taller de R
+##Mariana  Ordonez 202021691
+##Ivan Rodriguez 202112819
+##Laura Sofia Arana 202020594
+
+## Limpiar el entorno
+rm(list=ls())
+
+require (pacman)
+library(tidyverse)
+install.packages('BiocManager')
+install.packages("tidyverse")
+p_load(tidyverse,rio,tidy,coefplot)
+
+
+#Punto 1
+
+#1.1
+regresiones <- import ("input/data_regresiones.rds") 
+
+modelo1 <- lm(price ~ surface_total + bathrooms, data=regresiones)
+summary(modelo1)
+
+modelo2 <- lm(price ~ surface_total + property_type, data=regresiones)
+summary(modelo2)
+
+modelo3 <- lm(price ~ surface_total + dist_cbd + dist_cole + dist_park, data=regresiones)
+summary(modelo3)
+
+#1.2
+tabla_1 <- tidy(x=modelo1)
+
